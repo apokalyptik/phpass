@@ -6,7 +6,7 @@ Installation:
 go get github.com/apokalyptik/phpass/phpass-check
 ```
 
-or download a build from http://gobuild.io/download/github.com/apokalyptik/phpass/phpass-hash
+or download a build from http://gobuild.io/download/github.com/apokalyptik/phpass/phpass-check
 
 Usage:
 
