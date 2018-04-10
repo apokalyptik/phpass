@@ -16,6 +16,7 @@ import (
 	"bytes"
 	"crypto/md5"
 	"crypto/rand"
+	"crypto/subtle"
 	"errors"
 	"hash"
 	"strings"
@@ -51,7 +52,7 @@ func (h *Hash) Check(pw, pwhash []byte) bool {
 	//if generated[0] == 42 {
 	//	generated = ?crypt?(password, hash)
 	//}
-	return bytes.Equal(generated, pwhash)
+	return 1 == subtle.ConstantTimeCompare(generated, pwhash)
 }
 
 func (h *Hash) crypt(pw, pwhash []byte) ([]byte, error) {
